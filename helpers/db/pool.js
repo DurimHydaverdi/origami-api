@@ -1,13 +1,13 @@
 const mysql = require('mysql');
 const util = require('util');
+
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: 'host',
-  user: 'user',
-  port: 'port',
-  password: 'database-password',
-  database: 'database-name',
-  charset: 'utf8mb4',
+  host: "localhost",
+  port: "3306",
+  user: "root",
+  password: "12345678", 
+  database: "origami_db"
 });
 pool.getConnection((err, connection) => {
   if (err) {
