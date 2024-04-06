@@ -72,7 +72,7 @@ router.get('/',
  *        - bearerAuth: []  
  *      tags:
  *          - Player
- *      summary: Create a player
+ *      summary: Update a player
  *      description: 
  *      consumes:
  *        - application/json
@@ -100,7 +100,7 @@ router.get('/',
  *                type: string
  *      responses:
  *        200:
- *          description: Get task info back 
+ *          description: Get player profile back
  */
 router.put('/',
     AuthHelper.isAuthenticated,

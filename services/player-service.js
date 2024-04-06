@@ -40,11 +40,11 @@ class PlayerService {
             return response;
         }
 
-        const playerResponse = ResponseHelper.create(true, tasks, null);
+        const playerResponse = ResponseHelper.create(true, response.data, null);
         return playerResponse;
     }
 
-    static async editTask(playerData) {
+    static async updatePlayer(playerData) {
 
         const spName = "PLAYER_PROFILE_UPDATE";
         const params = [
