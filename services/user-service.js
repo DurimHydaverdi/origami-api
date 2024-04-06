@@ -10,9 +10,11 @@ const shortid = require('shortid');
 class UserService {
     static async login(userData) {
         const checkUserIfExists = await this.getUserByEmail(userData.email);
+    
         if (checkUserIfExists.result == true) {
             const isPasswordOk = bcrypt.compareSync(
-                userData.password
+                userData.password,
+                checkUserIfExists.data.password
               );
               if (!isPasswordOk) {
                 throw Boom.unauthorized("Wrong password");
